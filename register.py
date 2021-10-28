@@ -28,5 +28,10 @@ while not flag:
 		change=float(moneyGiven)-subtotal
 		flag=True
 		changeForm="${:,.2f}".format(change)
+	else:
+		if mode==4:
+			print ("You must obtain the subtotal before completing a sale.")
+		else:
+			print("Error!")
 print("Change: {}".format(changeForm))
 input("Press any key to exit")
