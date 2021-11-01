@@ -1,8 +1,3 @@
-#Void/Refund: -
-#Insert price: +
-#Subtotal: =
-#Complete sale: Enter
-
 import keyboard
 
 print("Modes:\nAdd: 1\nSubtract: 2\nSubtotal: 3\nComplete Sale (Only after getting the subtotal): 4")
