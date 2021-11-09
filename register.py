@@ -3,17 +3,18 @@ from functools import partial
 
 num=""
 subtotal=0.00
-under=False
-index=0
-departments=[]
-numDepartments=0
+#under=False
+#index=0
+#departments=[]
+#numDepartments=0
 
-while not under:
+#For future development regarding departments
+'''while not under:
 	numDepartments=int(input("Number of departments (maximum is 26): "))
 	if numDepartments>0 and numDepartments<=26:
 		under=True
 
-letters=['q','w','e','r','t','y','u','i','o','p','a','s','d','f','g','h','j','k','l','z','x','c','v','b','n','m']
+letters=['q','w','e','r','t','y','u','i','o','p','a','s','d','f','g','h','j','k','l','z','x','c','v','b','n','m']'''
 
 def type(i):
 	global num
