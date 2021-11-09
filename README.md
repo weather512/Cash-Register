@@ -1,6 +1,9 @@
 # Cash-Register
  
 This is a developing project to simulate a cash register.
+
+Trello Board:https://trello.com/b/ZsWcSYZW
+
 My plans:
 
 	Version 1.0: Essentially a very basic console-based calculator.
