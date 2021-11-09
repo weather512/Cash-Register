@@ -1,37 +1,45 @@
-#Void/Refund: -
-#Insert price: +
-#Subtotal: =
-#Complete sale: Enter
-
 import keyboard
+from functools import partial
 
-print("Modes:\nAdd: 1\nSubtract: 2\nSubtotal: 3\nComplete Sale (Only after getting the subtotal): 4")
+num=""
 subtotal=0.00
-flag=False
-canComplete=False
-while not flag:
-	mode=int(input("Mode: "))
-	if mode == 1:
-		price=input("$")
-		subtotal+=float(price)
-		canComplete=False
-	elif mode==2:
-		price=input("$")
-		subtotal-=float(price)
-		canComplete=False
-	elif mode==3:
-		form="${:,.2f}".format(subtotal)
-		print("Subtotal: {}".format(form))
-		canComplete=True
-	elif mode==4 and canComplete:
-		moneyGiven=input("$")
-		change=float(moneyGiven)-subtotal
-		flag=True
-		changeForm="${:,.2f}".format(change)
+
+def type(i):
+	global num
+	num+=str(i)
+	print(num,end='\r')
+
+def add():
+	global subtotal
+	global num
+	if num=="":
+		price=0
 	else:
-		if mode==4:
-			print ("You must obtain the subtotal before completing a sale.")
-		else:
-			print("Error!")
-print("Change: {}".format(changeForm))
-input("Press any key to exit")
+		price=int(num)
+	subtotal+=(price/100)
+	num=""
+	print("\n")
+	#print("Hi")
+
+def subtract():
+	global subtotal
+	global num
+	if num=="":
+		price=0
+	else:
+		price=int(num)
+	subtotal-=(price/100)
+	num=""
+	print("\n")
+
+def getSubtotal():
+	print("Subtotal: {}".format(subtotal))
+
+for i in range(10):
+	keyboard.add_hotkey(str(i),partial(type,i))
+
+keyboard.add_hotkey('+',add)
+keyboard.add_hotkey('-',subtract)
+keyboard.add_hotkey('=',getSubtotal)
+
+keyboard.wait('esc')
