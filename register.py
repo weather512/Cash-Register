@@ -14,11 +14,8 @@ while not under:
 		under=True
 
 letters=['q','w','e','r','t','y','u','i','o','p','a','s','d','f','g','h','j','k','l','z','x','c','v','b','n','m']
-
-def type(i):
-	global num
-	num+=str(i)
-	print(num,end='\r')
+#lettersX=[None]*(numDepartments-1)
+lettersX=[]
 
 def add():
 	global subtotal
@@ -31,6 +28,23 @@ def add():
 	num=""
 	print("\n")
 	#print("Hi")
+
+while index<numDepartments:
+	#lettersX[num]=letters[num]
+	lettersX.append(letters[index])
+	#print(letters[y])
+	index+=1
+
+for x in lettersX:
+	dep=input("Enter the department for '{}': ".format(x))
+	departments.append(dep)
+	keyboard.add_hotkey(x,add)
+
+
+def type(i):
+	global num
+	num+=str(i)
+	print(num,end='\r')
 
 def subtract():
 	global subtotal
@@ -45,6 +59,19 @@ def subtract():
 
 def getSubtotal():
 	print("Subtotal: {}".format(subtotal))
+
+# def Main():
+
+# 	for i in range(10):
+# 		keyboard.add_hotkey(str(i),partial(type,i))
+
+# 	keyboard.add_hotkey('+',add)
+# 	keyboard.add_hotkey('-',subtract)
+# 	keyboard.add_hotkey('=',getSubtotal)
+
+# 	keyboard.wait('esc')
+
+# Main()
 
 for i in range(10):
 	keyboard.add_hotkey(str(i),partial(type,i))
