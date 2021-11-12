@@ -3,10 +3,10 @@ from functools import partial
 
 num=""
 subtotal=0.00
-#under=False
-#index=0
-#departments=[]
-#numDepartments=0
+under=False
+index=0
+departments=[]
+numDepartments=0
 
 #For future development regarding departments
 while not under:
