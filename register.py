@@ -3,11 +3,12 @@ from functools import partial
 
 num=""
 subtotal=0.00
-under=False
-index=0
-departments=[]
-numDepartments=0
+#under=False
+#index=0
+#departments=[]
+#numDepartments=0
 
+#For future development regarding departments
 while not under:
 	numDepartments=int(input("Number of departments (maximum is 26): "))
 	if numDepartments>0 and numDepartments<=26:
