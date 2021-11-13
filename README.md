@@ -2,7 +2,9 @@
  
 This is a developing project to simulate a cash register.
 
-Trello Board:https://trello.com/b/ZsWcSYZW
+Disclaimer: Do not use this program in lieu of an actual cash register. This is more of a simulation of a cash register that I am making as to practice my python programming.
+
+Trello Board: https://trello.com/b/ZsWcSYZW
 
 My plans:
 
